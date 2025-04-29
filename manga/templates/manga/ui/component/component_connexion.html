@@ -1,0 +1,377 @@
+<style>
+    h1 {
+        letter-spacing: -1px;
+    }
+    
+    a {
+        color: #5469d4;
+        text-decoration: unset;
+    }
+    
+    .login-root {
+        background: #fff;
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+    
+    .loginbackground {
+        min-height: 692px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 0;
+        overflow: hidden;
+    }
+    
+    .flex-flex {
+        display: flex;
+    }
+    
+    .align-center {
+        align-items: center;
+    }
+    
+    .center-center {
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .box-root {
+        box-sizing: border-box;
+    }
+    
+    .flex-direction--column {
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    
+    .loginbackground-gridContainer {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: [start] 1fr [left-gutter] (86.6px)[16] [left-gutter] 1fr [end];
+        grid-template-columns: [start] 1fr [left-gutter] repeat(16, 86.6px) [left-gutter] 1fr [end];
+        -ms-grid-rows: [top] 1fr [top-gutter] (64px)[8] [bottom-gutter] 1fr [bottom];
+        grid-template-rows: [top] 1fr [top-gutter] repeat(8, 64px) [bottom-gutter] 1fr [bottom];
+        justify-content: center;
+        margin: 0 -2%;
+        transform: rotate(-12deg) skew(-12deg);
+    }
+    
+    .box-divider--light-all-2 {
+        box-shadow: inset 0 0 0 2px #e3e8ee;
+    }
+    
+    .box-background--blue {
+        background-color: #5469d4;
+    }
+    
+    .box-background--white {
+        background-color: #ffffff;
+    }
+    
+    .box-background--blue800 {
+        background-color: #212d63;
+    }
+    
+    .box-background--gray100 {
+        background-color: #e3e8ee;
+    }
+    
+    .box-background--cyan200 {
+        background-color: #7fd3ed;
+    }
+    
+    .padding-top--64 {
+        padding-top: 64px;
+    }
+    
+    .padding-top--24 {
+        padding-top: 24px;
+    }
+    
+    .padding-top--48 {
+        padding-top: 48px;
+    }
+    
+    .padding-bottom--24 {
+        padding-bottom: 24px;
+    }
+    
+    .padding-horizontal--48 {
+        padding: 48px;
+    }
+    
+    .padding-bottom--15 {
+        padding-bottom: 15px;
+    }
+    
+    .flex-justifyContent--center {
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    
+    .formbg {
+        margin: 0px auto;
+        width: 100%;
+        max-width: 757px;
+        background: white;
+        border-radius: 4px;
+        box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+    }
+    
+    span {
+        display: block;
+        font-size: 20px;
+        line-height: 28px;
+        color: #1a1f36;
+    }
+    
+    label {
+        margin-bottom: 10px;
+    }
+    
+    .reset-pass a,
+    label {
+        font-size: 14px;
+        font-weight: 600;
+        display: block;
+    }
+    
+    .reset-pass>a {
+        text-align: right;
+        margin-bottom: 10px;
+    }
+    
+    .grid--50-50 {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+    }
+    
+    .field input {
+        font-size: 16px;
+        line-height: 28px;
+        padding: 8px 16px;
+        width: 100%;
+        min-height: 44px;
+        border: unset;
+        border-radius: 4px;
+        outline-color: rgb(84 105 212 / 0.5);
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+    }
+    
+    input[type="submit"] {
+        background-color: rgb(84, 105, 212);
+        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgb(84, 105, 212) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    
+    .field-checkbox input {
+        width: 20px;
+        height: 15px;
+        margin-right: 5px;
+        box-shadow: unset;
+        min-height: unset;
+    }
+    
+    .field-checkbox label {
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+    
+    a.ssolink {
+        display: block;
+        text-align: center;
+        font-weight: 600;
+    }
+    
+    .footer-link span {
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    .listing a {
+        color: #697386;
+        font-weight: 600;
+        margin: 0 10px;
+    }
+    
+    .animationRightLeft {
+        animation: animationRightLeft 2s ease-in-out infinite;
+    }
+    
+    .animationLeftRight {
+        animation: animationLeftRight 2s ease-in-out infinite;
+    }
+    
+    .tans3s {
+        animation: animationLeftRight 3s ease-in-out infinite;
+    }
+    
+    .tans4s {
+        animation: animationLeftRight 4s ease-in-out infinite;
+    }
+    
+    @keyframes animationLeftRight {
+        0% {
+            transform: translateX(0px);
+        }
+        50% {
+            transform: translateX(1000px);
+        }
+        100% {
+            transform: translateX(0px);
+        }
+    }
+    
+    @keyframes animationRightLeft {
+        0% {
+            transform: translateX(0px);
+        }
+        50% {
+            transform: translateX(-1000px);
+        }
+        100% {
+            transform: translateX(0px);
+        }
+    }
+    
+    .step {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbbbbb;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0.5;
+    }
+    /* Mark the active step: */
+    
+    .step.active {
+        opacity: 1;
+    }
+    /* Mark the steps that are finished and valid: */
+    
+    .step.finish {
+        background-color: #04AA6D;
+    }
+    /* Hide all steps by default: */
+    
+    .tab {
+        display: none;
+    }
+    /* style custom error */
+    
+    .content_error {
+        border-bottom-right-radius: 4px;
+        border-top-right-radius: 4px;
+        border-left: groove;
+        border-left-color: #5469d4;
+    }
+    
+    .content_error ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .content_error ul li {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+</style>
+
+<main>
+    <div>
+        <div class="login-root">
+            <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+                <div class="loginbackground box-background--white padding-top--64">
+                    <div class="loginbackground-gridContainer">
+                        <div class="box-root flex-flex" style="grid-area: top / start / 8 / end;">
+                            <div class="box-root" style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;">
+                            </div>
+                        </div>
+                        <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5;">
+                            <div class="box-root box-divider--light-all-2 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+                        </div>
+                        <div class="box-root flex-flex" style="grid-area: 6 / start / auto / 2;">
+                            <div class="box-root box-background--blue800" style="flex-grow: 1;"></div>
+                        </div>
+                        <div class="box-root flex-flex" style="grid-area: 7 / start / auto / 4;">
+                            <div class="box-root box-background--blue animationLeftRight" style="flex-grow: 1;"></div>
+                        </div>
+                        <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6;">
+                            <div class="box-root box-background--gray100 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+                        </div>
+                        <div class="box-root flex-flex" style="grid-area: 2 / 15 / auto / end;">
+                            <div class="box-root box-background--cyan200 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+                        </div>
+                        <div class="box-root flex-flex" style="grid-area: 3 / 14 / auto / end;">
+                            <div class="box-root box-background--blue animationRightLeft" style="flex-grow: 1;"></div>
+                        </div>
+                        <div class="box-root flex-flex" style="grid-area: 4 / 17 / auto / 20;">
+                            <div class="box-root box-background--gray100 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+                        </div>
+                        <div class="box-root flex-flex" style="grid-area: 5 / 14 / auto / 17;">
+                            <div class="box-root box-divider--light-all-2 animationRightLeft tans3s" style="flex-grow: 1;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+                    <div class="content_error mx-auto bg-red-600 mb-2 text-white font-medium"></div>
+                    <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto mb-10">
+
+                        <form class="space-y-6" action="#" method="post">
+                            <h5 class="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h5>
+                            <!-- <div>
+                                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                                <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    placeholder="name@company.com" required>
+                            </div>
+                            <div>
+                                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                                <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    required>
+                            </div> -->
+                            {% csrf_token %} {{ form.as_p }}
+                            <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
+                            <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                                Pas de compte? <a href="{% url 'manga:inscription' %}" class="text-blue-700 hover:underline dark:text-blue-500">Crée un compte</a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-dial-init class="fixed bottom-6 right-24 group z-50">
+        <div id="speed-dial-menu-dropdown-alternative" class="flex flex-col justify-end hidden py-1 mb-4 space-y-2 bg-white border border-gray-100 rounded-lg shadow-sm dark:bg-gray-700 dark:border-gray-600">
+            <ul class="text-sm text-gray-500 dark:text-gray-300 list-none pl-0">
+                <li>
+                    <a href="{% url 'manga:index' %}" class="flex items-center space-x-4 px-5 py-2 border-b border-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 hover:text-gray-900 dark:hover:text-white dark:border-gray-600">
+                        <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                            <path d="M18 0H2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h2v4a1 1 0 0 0 1.707.707L10.414 13H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5 4h2a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2ZM5 4h5a1 1 0 1 1 0 2H5a1 1 0 0 1 0-2Zm2 5H5a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Zm9 0h-6a1 1 0 0 1 0-2h6a1 1 0 1 1 0 2Z"/>
+                        </svg>
+                        <span class="text-sm font-medium">Accueil</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <button type="button" data-dial-toggle="speed-dial-menu-dropdown-alternative" aria-controls="speed-dial-menu-dropdown-alternative" aria-expanded="false" class="flex items-center justify-center ml-auto text-white bg-blue-700 rounded-full w-14 h-14 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
+            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="m13.835 7.578-.005.007-7.137 7.137 2.139 2.138 7.143-7.142-2.14-2.14Zm-10.696 3.59 2.139 2.14 7.138-7.137.007-.005-2.141-2.141-7.143 7.143Zm1.433 4.261L2 12.852.051 18.684a1 1 0 0 0 1.265 1.264L7.147 18l-2.575-2.571Zm14.249-14.25a4.03 4.03 0 0 0-5.693 0L11.7 2.611 17.389 8.3l1.432-1.432a4.029 4.029 0 0 0 0-5.689Z"/>
+            </svg>
+            <span class="sr-only">Open actions menu</span>
+        </button>
+    </div>
+</main>

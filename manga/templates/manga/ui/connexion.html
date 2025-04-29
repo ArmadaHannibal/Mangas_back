@@ -1,0 +1,19 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'tailwind.css' %}" rel="stylesheet">
+    <script src="{% static 'manga/js/main.js' %}" defer></script>
+    <script src="{% static 'manga/js/flowbite.min.js' %}"></script>
+    <title>Connexion</title>
+</head>
+
+<body>
+    {% include './component/component_connexion.html' %}
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+.main_select_slider {
+    top: 9rem;
+    right: 1rem;
+}
+
+.select_cover {
+    border: 1px solid #fff;
+    border-radius: 15px;
+}
+
+.bg_description_content {
+    background-color: #000;
+    height: 13rem;
+    width: 49rem;
+    top: 18rem;
+    left: 1rem;
+    border-radius: 15px;
+    opacity: 0.5;
+}
+
+.description_content {
+    top: 19rem;
+    left: 2rem;
+}
+
+.paragraphe_content {
+    width: 47rem;
+}
+
+.eventSlide {
+    /* Styles à appliquer à tous les éléments de la classe maClasse, sauf au premier */
+    filter: brightness(.5);
+}
+
+.eventSlide:hover {
+    filter: brightness(1);
+}

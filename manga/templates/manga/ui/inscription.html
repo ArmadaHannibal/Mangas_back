@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'tailwind.css' %}">
+    <script src="{% static 'manga/js/flowbite.min.js' %}"></script>
+    <script src="{% static 'manga/js/datepicker.min.js' %}"></script>
+    <script src="{% static 'manga/jquery/jquery.js' %}"></script>
+    <script src="{% static 'manga/js/main.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>inscription</title>
+</head>
+
+<body>
+    <!-- Design de l'inscription -->
+    {% include './component/component_inscription.html' %}
+</body>
+
+</html>
+
+<!-- Made in Hannibal webtinix -->
